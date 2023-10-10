@@ -54,7 +54,8 @@ def index():
 cmds = {
     'nodejs':{"run":"node main.js", "install":""},
     'python':{"run":"python main.py", "install":""},
-    'c-language':{"run":"gcc main.c -o main && ./main", "install":""}
+    'c-language':{"run":"gcc main.c -o main && ./main", "install":""},
+    'java':{"run":"javac HelloWorld.java && java HelloWorld"}
 }
 
 @app.route("/<slug>/")
