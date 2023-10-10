@@ -1,0 +1,14 @@
+{
+    "name": "html-project",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "live-server --port=80 --host=0.0.0.0",
+        "start":"parcel --host 0.0.0.0 --port 80 index.html",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^4.0.0"
+    }
+}
