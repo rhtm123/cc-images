@@ -3,9 +3,7 @@
     <meta charset="utf-8" />
     <title>Terminal</title>
     <style>
-      html {
-        font-family: "arial";
-      }
+
       body {
         margin: 0px;
         /* padding-top:8px; */
@@ -18,7 +16,7 @@
   align-items: center;
   justify-content: center;
   /* height: 52px; */
-  padding: 4px 10px;
+  padding: 4px 8px;
   cursor: pointer;
   white-space: nowrap;
   border-width: 1px;
@@ -28,26 +26,27 @@
   outline: none;
   background-color: #15802e;
   color: #fff;
-      }
-      .wrapper{
-        display:flex; justify-content:space-between;
-        align-items: center; 
-        background: #3d3d3d;
-        /* margin-bottom:4px; */
-      }
+  }
+  .wrapper{
+    display:flex; justify-content:space-between;
+    align-items: center; 
+    background: #3d3d3d;
+    /* margin-bottom:4px; */
+  }
     </style>
     <link
       rel="stylesheet"
       href="https://unpkg.com/xterm@4.11.0/css/xterm.css"
     />
   </head>
+  
   <body style="background-color: #3d3d3d;">
 
     <div class="wrapper">
     <button class="btn" id="run">RUN</button>
       <span style="font-size: small" id="status">connecting...</span></span>
     </div>
-    <div style="width: 100%; height: calc(100% - 50px)" id="terminal"></div>
+    <div style="width: 100%; height: calc(100% - 36px)" id="terminal"></div>
 
     <!-- xterm -->
     <script src="https://unpkg.com/xterm@4.11.0/lib/xterm.js"></script>
@@ -71,7 +70,7 @@
         macOptionIsMeta: true,
         // scrollback: true,
       });
-      term.attachCustomKeyEventHandler(customKeyEventHandler);
+      // term.attachCustomKeyEventHandler(customKeyEventHandler);
       // https://github.com/xtermjs/xterm.js/issues/2941
       const fit = new FitAddon.FitAddon();
       term.loadAddon(fit);
@@ -98,10 +97,7 @@
       }
 
       term.writeln("Welcome to terminal");
-
       term.writeln("Click on RUN to execute your program");
-      term.writeln("You can copy with ctrl+shift+x");
-      term.writeln("You can paste with ctrl+shift+v");
       term.writeln('')
       
       socket.on("pty-output", function (data) {
