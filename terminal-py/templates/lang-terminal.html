@@ -11,12 +11,12 @@
       .btn {
   font-size: 14px;
   font-weight: 600;
-  line-height: 32px;
+/*   line-height: 32px; */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   /* height: 52px; */
-  padding: 4px 8px;
+  padding: 8px 16px;
   cursor: pointer;
   white-space: nowrap;
   border-width: 1px;
@@ -46,7 +46,7 @@
     <button class="btn" id="run">RUN</button>
       <span style="font-size: small" id="status">connecting...</span></span>
     </div>
-    <div style="width: 100%; height: calc(100% - 36px)" id="terminal"></div>
+    <div style="width: 100%; height: calc(100% - 48px)" id="terminal"></div>
 
     <!-- xterm -->
     <script src="https://unpkg.com/xterm@4.11.0/lib/xterm.js"></script>
@@ -68,6 +68,7 @@
       const term = new Terminal({
         cursorBlink: true,
         macOptionIsMeta: true,
+        fontFamily: 'monospace',
         // scrollback: true,
       });
       // term.attachCustomKeyEventHandler(customKeyEventHandler);
