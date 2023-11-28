@@ -16,7 +16,7 @@ COPY main.py /src/main.py
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 RUN npm cache clean --force
-RUN npm uninstall -g prompt-sync && npm install -g prompt-sync
+RUN npm install prompt-sync --save --prefix /src
 
 COPY . /app
 EXPOSE 80
