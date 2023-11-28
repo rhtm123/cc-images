@@ -15,6 +15,7 @@ COPY main.py /src/main.py
 
 COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
+RUN npm i prompt-sync
 COPY . /app
 EXPOSE 80
 
