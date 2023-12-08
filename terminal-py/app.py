@@ -25,6 +25,7 @@ app.config["SECRET_KEY"] = "secret!"
 app.config["fd"] = None
 app.config["child_pid"] = None
 
+CORS(app, resources={r"/pty/*": {"origins": "*"}})  # Apply CORS to /pty routes
 socketio = SocketIO(app, cors_allowed_origins="*" )
 
 
