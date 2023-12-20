@@ -18,4 +18,4 @@ RUN code-server --install-extension ms-python.python
 EXPOSE 80
 
 # Start code-server on container startup
-ENTRYPOINT ["code-server", "--auth", "none", "--host", "0.0.0.0", "--port", "80"]
+ENTRYPOINT ["code-server", "--auth", "none", "--host", "0.0.0.0", "--port", "80", "--link"]
