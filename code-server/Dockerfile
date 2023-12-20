@@ -1,5 +1,5 @@
 # Use a base image with Node.js and code-server pre-installed
-FROM codercom/code-server:3.14.1
+FROM codercom/code-server:latest
 
 # Set the working directory
 WORKDIR /home/coder/project
